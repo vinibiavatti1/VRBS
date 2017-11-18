@@ -53,7 +53,7 @@ public abstract class VRBSFunction {
 	 * @param parameters
 	 * @return
 	 * @throws VRBSException
-	 * @see {@link VRBSParameterValidator}
+	 * @see VRBSParameterValidator
 	 */
 	public String[] validateParameters(String[] parameters) throws VRBSException {
 		return this.parameterValidator.validateParameters(compiler, name, parameters, parametersTypes);

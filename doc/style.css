@@ -1,0 +1,19 @@
+.margin-left {
+  margin-left: 20px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header, main, footer {
+  padding-left: 300px;
+}
+
+.padding {
+  padding: 20px;
+}
+
+.menu {
+  position: fixed; left: 0px; height: 100%; overflow-y: auto; width: 300px;
+}

@@ -516,8 +516,8 @@ public class VRBSCompiler {
 	}
 
 	/**
-	 * @param breakk
-	 *            the breakk to set
+	 * @param breakCursor
+	 *            the breakCursor to set
 	 */
 	public void setBreakCursor(boolean breakCursor) {
 		this.breakCursor = breakCursor;

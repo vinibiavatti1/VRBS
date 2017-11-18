@@ -1,0 +1,1066 @@
+<html id="home">
+
+<head>
+	<title>VRBS Doc</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="">
+	<header>
+		<div class="menu">
+			<nav class="blue darken-2">
+				<span class="brand-logo light" style="margin-left: 20px">
+					Menu
+				</span>
+			</nav>
+			<div class="padding">
+				<a href="#vrbl">VRBS</a>
+				<br>
+				<a href="#biblioteca">Biblioteca</a>
+				<br>
+				<a href="#app" class="margin-left">Aplicação</a>
+				<br>
+				<a href="#fncustomizada" class="margin-left">Função customizada</a>
+				<br>
+				<a href="#ide">IDE</a>
+				<br>
+				<a href="#sintaxe" class="margin-left">Sintaxe</a>
+				<br>
+				<a href="#comentarios" class="margin-left">Comentários</a>
+				<br>
+				<a href="#instrucoes">Funções Nativas</a>
+				<br>
+				<a href="#var" class="margin-left">var</a>
+				<br>
+				<a href="#print" class="margin-left">print</a>
+				<br>
+				<a href="#printLn" class="margin-left">printLn</a>
+				<br>
+				<a href="#calc" class="margin-left">calc</a>
+				<br>
+				<a href="#sin" class="margin-left">sin</a>
+				<br>
+				<a href="#cos" class="margin-left">cos</a>
+				<br>
+				<a href="#inc" class="margin-left">inc</a>
+				<br>
+				<a href="#dec" class="margin-left">dec</a>
+				<br>
+				<a href="#toInt" class="margin-left">toInt</a>
+				<br>
+				<a href="#toFloat" class="margin-left">toFloat</a>
+				<br>
+				<a href="#pow" class="margin-left">pow</a>
+				<br>
+				<a href="#label" class="margin-left">label</a>
+				<br>
+				<a href="#goto" class="margin-left">goto</a>
+				<br>
+				<a href="#check" class="margin-left">check</a>
+				<br>
+				<a href="#line" class="margin-left">line</a>
+				<br>
+				<a href="#if" class="margin-left">if</a>
+				<br>
+				<a href="#ifElse" class="margin-left">ifElse</a>
+				<br>
+				<a href="#case" class="margin-left">case</a>
+				<br>
+				<a href="#list" class="margin-left">list</a>
+				<br>
+				<a href="#insert" class="margin-left">insert</a>
+				<br>
+				<a href="#get" class="margin-left">get</a>
+				<br>
+				<a href="#remove" class="margin-left">remove</a>
+				<br>
+				<a href="#size" class="margin-left">size</a>
+				<br>
+				<a href="#input" class="margin-left">input</a>
+				<br>
+				<a href="#msg" class="margin-left">msg</a>
+				<br>
+				<a href="#clear" class="margin-left">clear</a>
+				<br>
+				<a href="#delay" class="margin-left">delay</a>
+				<br>
+				<a href="#compilerDelay" class="margin-left">compilerDelay</a>
+				<br>
+				<a href="#stop" class="margin-left">stop</a>
+				<br>
+				<a href="#exit" class="margin-left">exit</a>
+				<br>
+				<a href="#concat" class="margin-left">concat</a>
+				<br>
+				<a href="#import" class="margin-left">import</a>
+				<br>
+				<a href="#length" class="margin-left">length</a>
+				<br>
+				<a href="#charAt" class="margin-left">charAt</a>
+				<br>
+				<a href="#showIde" class="margin-left">showIde</a>
+				<br>
+				<a href="#hideIde" class="margin-left">hideIde</a>
+				<br>
+				<a href="#fileRead" class="margin-left">fileRead</a>
+				<br>
+				<a href="#fileWrite" class="margin-left">fileWrite</a>
+				<br>
+				<a href="#asciiEncode" class="margin-left">asciiEncode</a>
+				<br>
+				<a href="#asciiDecode" class="margin-left">asciiDecode</a>
+				<br>
+				<a href="#random" class="margin-left">random</a>
+				<br>
+				<a href="#randomInt" class="margin-left">randomInt</a>
+				<br>
+				<a href="#randomIntLimit" class="margin-left">randomIntLimit</a>
+				<br>
+				<a href="#obj" class="margin-left">obj</a>
+				<br>
+				<a href="#setAttribute" class="margin-left">setAttribute</a>
+				<br>
+				<a href="#getAttribute" class="margin-left">getAttribute</a>
+				<br>
+				<a href="#qtdVar" class="margin-left">qtdVar</a>
+				<br>
+				<a href="#qtdList" class="margin-left">qtdList</a>
+				<br>
+				<a href="#qtdObj" class="margin-left">qtdObj</a>
+				<br>
+				<a href="#getVarName" class="margin-left">getVarName</a>
+				<br>
+				<a href="#getListName" class="margin-left">getListName</a>
+				<br>
+				<a href="#getObjName" class="margin-left">getObjName</a>
+				<br>
+				<a href="#break" class="margin-left">break</a>
+				<br>
+				<a href="#cmd" class="margin-left">cmd</a>
+				<br>
+				<a href="#">Sobre</a>
+			</div>
+		</div>
+		<nav class="blue darken-2">
+			<div class="">
+				<span class="brand-logo light" style="margin-left: 20px">
+					VRBS Documentação
+				</span>
+			</div>
+		</nav>
+	</header>
+	<main>
+		<div class="">
+			<div class="padding">
+				<h5 id="vrbl" class="light">VRBS</h5>
+				<hr> A linguagem de Script VRBS é uma linguagem baseada em funções, onde cada função tem sua ação. Por exemplo, para criar uma estrutura
+				de repetição não serão utilizadas palavras reservadas, más sim, funções. A linguagem tem foco em fornecer a possibilidade de customização
+				de um sistema para o cliente, como a linguagem LUA. Ela também é recomendada para aprendizado de programação, por ser uma linguágem de script 
+				simples estrutural. 
+				<br>
+				<br>
+				<h5 id="biblioteca" class="light">Biblioteca</h5>
+				<hr> A Linguagem foi desenvolvida pela tecnologia Java, e pode ser adicionada como uma biblioteca em qualquer aplicação java. Ela oferece o 
+				desenvolvimento de funções customizadas com ações definidar pelo próprio desenvolvedor para integração. 
+				<br>
+				<br>
+				<h5 id="app" class="light">Aplicação</h5>
+				<hr> Para realizar a execução do compilador no aplicação, precisamos ter uma instância de <code>VRBSCompiler</code> informando em seu construtor os campos de 
+				entrada de código e saída.
+				<br><br>
+				<code>VRBSCompiler compiler = new VRBSCompiler(input, output);</code> 
+				<br><br>
+				Para realizar a execução do código de entrada, usamos o método <code>execute()</code>.
+				<br><br>
+				<code>compiler.execute();</code> 
+				<br><br>
+				Para mais informações sobre os recursos disponíveis no compilador, consulte o javadoc dentro dos fontes do VRBS.
+				<br>
+				<br>
+				<h5 id="fncustomizada" class="light">Função Customizada</h5>
+				<hr> A biblioteca oferece uma interface para criação de funções customizadas. A interface tem por obrigatoriedade a implementação de um método
+				<code>executar()</code> onde o mesmo tem a ação de executar a função customizada quando a mesma for chamada. Também oferece tratamento de "n" parâmetros 
+				padrão. Após a classe da função ser criada, ela deve ser <b>registrada</b> no compilador para estar disponível para uso. Para registrar a função, é 
+				necessária a utilização do método <code>registerFunction(função)</code>. Abaixo segue um passo a passo para criação de uma função.  
+				<br><br>
+				<b>Passo 1</b>
+				<br>
+				Criar uma classe java na qual será a função a ser criada, extendendo da classe VRBSFunction.
+				<br><br>
+				<img src="./1.png">
+				<br>
+				<br>
+
+				<b>Passo 2</b>
+				<br>
+				Estabelecer o array de tipo de parâmetros que a função irá aceitar. O array deve ser do tipo VRBSDataType. Por exemplo, caso necessitaremos criar 
+				uma função que aceite 2 parâmetros, um numérico e outro string, iremos ter o seguinte:
+				<br><br>
+				<code>VRBSDataType[] parameters = {VRBSDataType.Number, VRBSDataType.Text};</code>
+				<br><br>
+				<img src="./2.png">
+				<br>
+				<br>
+
+				<b>Passo 3</b>
+				<br>
+				Iniciar a execução da função. Para consistir os parâmetros passados na chamada da função (Validar, obter o valor das variáveis, etc...) utilizamos um método 
+				da classe pai (VRBSFunction) chamado <code>validateParameters(parametros)</code> que retorna os parâmetros processados.
+				<br><br>
+				<code>parameters = validateParameters(parameters);</code>
+				<br><br>
+				<img src="./3.png">
+				<br>
+				<br>
+
+				<b>Passo 4</b>
+				<br>
+				Agora vamos criar a execução da função conforme os parâmetros passados. Já que temos somente 1 parâmetro do tipo texto nesta função, vamos imprimir o valor deste parâmetro 
+				no campo de saída do compilador. Para isto precisamos obter o compilador (<code>getCompiler()</code>) e obter o campo de saída (<code>getOutput()</code>).
+				<br><br>
+				<img src="./4.png">
+				<br>
+				<br>
+
+				<b>Passo 5</b>
+				<br>
+				Precisamos registrar a função para que ela fique disponível para uso no compilador. O método para registro é <code>registerFunction(instância)</code>.
+				<br><br>
+				<img src="./5.png">
+				<br>
+				<br>
+
+				<b>Passo 6</b>
+				<br>
+				Feito! Agora podemos utilizar nossa função customizada no script VRBS. 
+				<br><br>
+				<img src="./6.png">
+				<br>
+				<br>
+
+				<h5 id="ide" class="light">IDE</h5>
+				<hr>
+				<span>
+					VRBS se trata de uma biblioteca que pode ser importada em qualquer software em java, más também existe a VRBS IDE para facilitar a execução
+					de testes de funções nativas da linguagem e até mesmo o aprendizado em linguagens de programação estruturadas funcionais. 
+				</span>
+				<br>
+				<br>
+				<img src="./interface.png">
+				<br>
+				<br>
+				<span>
+					A IDE tem suporte a análise em tempo real das variáveis, listas e objetos definidos em execução. Também contém a possibilidade de
+					acompanhamento do código.
+				</span>
+				<br>
+				<br>
+				<h5 id="sintaxe" class="light">Sintaxe</h5>
+				<hr>
+				<span>
+					A sintaxe da linguagem é muito simples. Todas as funções tem um padrão de estilo das linguagem do dia a dia como (C, C++,
+					C#, Java, ...). Comentários também estão presentes para melhor Documentação do código. Abaixo segue um exemplo do código
+					em VRBL:
+				</span>
+				<blockquote>
+					<code>
+							// Programa de demonstração
+							<br> var("x",10)
+							<br> var("y",10)
+							<br> calc(x,"+",y,"z")
+							<br> print(z)
+							<br>
+						</code>
+				</blockquote>
+				<br>
+				<h5 id="comentarios" class="light">Comentários</h5>
+				<hr>
+				<span>
+					O compilador ignora comentário de linha e de múltiplas linhas, assim como qualquer texto inserido no código sem se tratar
+					de uma função.
+				</span>
+				<br>
+				<br>
+				<span>Comentário de linha:</span>
+				<blockquote class="green-text text-darken-2">
+					<code>
+						// Programa de demonstração
+						</code>
+				</blockquote>
+				<span>Comentário de múltiplas linhas:</span>
+				<blockquote class="green-text text-darken-2">
+					<code>
+						/*
+						<br> &nbsp;* Programa de demonstração
+						<br> &nbsp;*/
+						</code>
+				</blockquote>
+				<span>Texto qualquer sem ser uma função:</span>
+				<blockquote>
+					<code>
+						Programa de demonstração
+						</code>
+				</blockquote>
+				<br>
+				<h5 id="instrucoes" class="light">Funções Nativas</h5>
+				<hr>
+				<span>
+					Por se tratar de uma linguagem baseada em funções, todas as instruções seguem o mesmo padrão de chamada, no formato "nome_da_função(par1,
+					par2, parN)". Assim como funções de cálculos, as principais instruções como "if, var, goto" são também funções.
+				</span>
+				<br>
+				<br>
+				<h5 id="var" class="light">var</h5>
+				<hr>
+				<span>
+					Esta função tem como ação a definição de uma variável, ou a atribuição de uma valor a uma variável pré existente. A instrução
+					<code>var(1, 2)</code> tem o seguinte layout:
+					<br> 1- Nome da variável
+					<br> 2- Valor
+				</span>
+				<blockquote>
+					<code>
+							var("x",10)<br>
+							var("y","Hello World !!")<br>
+							var("x",50)
+						</code>
+				</blockquote>
+				<h5 id="print" class="light">print</h5>
+				<hr>
+				<span>
+					A função print irá mostrar um valor estático ou um valor de uma variável no console. A instrução
+					<code>print(1)</code> tem o seguinte layout:
+					<br> 1- Valor
+				</span>
+				<blockquote>
+					<code>
+							var("x",10)<br>
+							print(x)<br>
+							print("Hello World !!")
+						</code>
+				</blockquote>
+				<h5 id="printLn" class="light">printLn</h5>
+				<hr>
+				<span>
+					Tem a mesma ação que a função
+					<code>print</code> porém irá mostrar o valor quebrando uma linha. A instrução
+					<code>printLn(1)</code> tem o seguinte layout:
+					<br> 1- Valor
+				</span>
+				<blockquote>
+					<code>
+							var("x",10)<br>
+							printLn(x)<br>
+							printLn("Hello World !!")
+						</code>
+				</blockquote>
+				<h5 id="calc" class="light">calc</h5>
+				<hr>
+				<span>
+					Esta função é responsável por realizar diversos cálculos matemáticos, como soma, divisão, multiplicação, subtração e módulo.
+					A instrução
+					<code>calc(1, 2, 3, 4)</code> tem o seguinte layout:
+					<br> 1- Valor
+					<br> 2- Operador Aritmético
+					<br> 3- Valor
+					<br> 4- Variável
+				</span>
+				<blockquote>
+					<code>
+							var("x",10)<br>
+							var("y",5)<br>
+							calc(x,"+",y,"z")
+						</code>
+				</blockquote>
+				<h5 id="sin" class="light">sin</h5>
+				<hr>
+				<span>
+					Irá calcular o valor de Seno do parâmetro e atribuirá o resultado a variável especificada. A instrução
+					<code>sin(1, 2)</code> tem o seguinte layout:
+					<br> 1- Valor
+					<br> 2- Variável
+				</span>
+				<blockquote>
+					<code>
+							sin(3.14,"x")
+						</code>
+				</blockquote>
+				<h5 id="cos" class="light">cos</h5>
+				<hr>
+				<span>
+					Irá calcular o valor de Cosseno do parâmetro e atribuirá o resultado a variável especificada. A instrução
+					<code>cos(1, 2)</code> tem o seguinte layout:
+					<br> 1- Valor
+					<br> 2- Variável
+				</span>
+				<blockquote>
+					<code>
+							cos(3.14,"x")
+						</code>
+				</blockquote>
+				<h5 id="inc" class="light">inc</h5>
+				<hr>
+				<span>
+					Incrementará o valor do parâmetro e atribuirá o resultado a variável especificada. A instrução
+					<code>inc(1, 2)</code> tem o seguinte layout:
+					<br> 1- Valor
+					<br> 2- Variável
+				</span>
+				<blockquote>
+					<code>
+							var("x",10)<br>
+							inc(x,"x")
+						</code>
+				</blockquote>
+				<h5 id="dec" class="light">dec</h5>
+				<hr>
+				<span>
+					Decrementará o valor do parâmetro e atribuirá o resultado a variável especificada. A instrução
+					<code>dec(1, 2)</code> tem o seguinte layout:
+					<br> 1- Valor
+					<br> 2- Variável
+				</span>
+				<blockquote>
+					<code>
+							var("x",11)<br>
+							dec(x,"x")
+						</code>
+				</blockquote>
+				<h5 id="toInt" class="light">toInt</h5>
+				<hr>
+				<span>
+					Irá converter o valor do parâmetro em um valor inteiro e atribuirá o resultado a variável especificada. A instrução
+					<code>toInt(1, 2)</code> tem o seguinte layout:
+					<br> 1- Valor
+					<br> 2- Variável
+				</span>
+				<blockquote>
+					<code>
+							var("x",2.0)<br>
+							toInt(x,"x")
+						</code>
+				</blockquote>
+				<h5 id="toFloat" class="light">toFloat</h5>
+				<hr>
+				<span>
+					Irá converter o valor do parâmetro em um valor decimal e atribuirá o resultado a variável especificada. A instrução
+					<code>toFloat(1, 2)</code> tem o seguinte layout:
+					<br> 1- Valor
+					<br> 2- Variável
+				</span>
+				<blockquote>
+					<code>
+							var("x",2)<br>
+							toFloat(x,"x")
+						</code>
+				</blockquote>
+				<h5 id="pow" class="light">Pow</h5>
+				<hr>
+				<span>
+					Calcula a potência conforme parâmetros. A instrução
+					<code>pow(1, 2, 3)</code> tem o seguinte layout:
+					<br> 1- Valor
+					<br> 2- Expoente
+					<br> 3- Variável
+				</span>
+				<blockquote>
+					<code>
+							var("x",2)<br>
+							toFloat(x,"x")
+						</code>
+				</blockquote>
+				<h5 id="label" class="light">label</h5>
+				<hr>
+				<span>
+					Esta função serve somente para marcar um trecho do código e servir como alvo para outras funções de controle de cursor. A
+					instrução
+					<code>label(1)</code> tem o seguinte layout:
+					<br> 1- Nome do Label
+				</span>
+				<blockquote>
+					<code>
+							label("label 1")
+						</code>
+				</blockquote>
+				<h5 id="goto" class="light">goto</h5>
+				<hr>
+				<span>
+					Movimenta o cursor para o label especificado. A instrução
+					<code>goto(1)</code> tem o seguinte layout:
+					<br> 1- Label
+				</span>
+				<blockquote>
+					<code>
+							goto("label 1")<br>
+							label("label 1")
+						</code>
+				</blockquote>
+				<h5 id="check" class="light">check</h5>
+				<hr>
+				<span>
+					Irá checar o valor de um parâmetro conforma a intrução lógica parametrizada. Caso o resultado for verdadeiro, a linha abaixo
+					da instrução
+					<code>check</code> será executada, caso for falsa, a linha abaixo será ignorada. A instrução
+					<code>check(1, 2, 3)</code> tem o seguinte layout:
+					<br> 1- Valor
+					<br> 2- Operador Lógico
+					<br> 3- Valor
+				</span>
+				<blockquote>
+					<code>
+							var("x",5)<br>
+							check(x,"=",5)<br>
+							goto("label 1")<br>
+							goto("label 2")
+						</code>
+				</blockquote>
+				<h5 id="line" class="light">line</h5>
+				<hr>
+				<span>
+					Movimenta o cursor para a linha desejada. (Obs: Recomendamos o uso da instrução
+					<code>goto</code> pois o número da linha no código pode ser diferente do número da linha da sequância de processamento). A instrução
+					<code>line(1)</code> tem o seguinte layout:
+					<br> 1- Número da Linha
+				</span>
+				<blockquote>
+					<code>
+							line(10)
+						</code>
+				</blockquote>
+				<h5 id="if" class="light">if</h5>
+				<hr>
+				<span>
+					Movimenta o cursor ao label especificado caso a condição for verdadeira. A instrução
+					<code>if(1, 2, 3, 4)</code> tem o seguinte layout:
+					<br> 1- Valor
+					<br> 2- Operador Lógico
+					<br> 3- Valor
+					<br> 4- Label
+				</span>
+				<blockquote>
+					<code>
+							var("x",7)<br>
+							var("y",5)<br>
+							if(x,">=",y,"label")
+						</code>
+				</blockquote>
+				<h5 id="ifElse" class="light">ifElse</h5>
+				<hr>
+				<span>
+					Movimenta o cursor ao label especificado caso a condição for verdadeira. Caso for falsa, movimenta o cursor para o segundo
+					label especificado. A instrução
+					<code>ifElse(1, 2, 3, 4, 5)</code> tem o seguinte layout:
+					<br> 1- Valor
+					<br> 2- Operador Lógico
+					<br> 3- Valor
+					<br> 4- Label (Condição Verdadeira)
+					<br> 5- Label (Condição False)
+				</span>
+				<blockquote>
+					<code>
+							var("x",7)<br>
+							var("y",5)<br>
+							ifElse(x,">=",y,"verdadeiro","falso")
+						</code>
+				</blockquote>
+				<h5 id="case" class="light">case</h5>
+				<hr>
+				<span>
+					Movimenta o cursor ao label especificado caso o valor for igual ao valor de comparação. A instrução
+					<code>case(1, 2, 3)</code> tem o seguinte layout:
+					<br> 1- Valor
+					<br> 3- Valor
+					<br> 4- Label
+				</span>
+				<blockquote>
+					<code>
+							var("x",2)<br>
+							case(x,1,"label 1")<br>
+							case(x,2,"label 2")<br>
+							case(x,3,"label 3")
+						</code>
+				</blockquote>
+				<div style="display: none">
+					<h5 id="" class="light">MaErDrUoYnIeVeIlEb</h5>
+					<hr>
+					<span>
+						undefined
+					</span>
+					<blockquote>
+						<code>
+								???
+							</code>
+					</blockquote>
+				</div>
+				<h5 id="list" class="light">list</h5>
+				<hr>
+				<span>
+					Cria uma lista com o nome especificado. A instrução
+					<code>list(1)</code> tem o seguinte layout:
+					<br> 1- Nome da Lista
+				</span>
+				<blockquote>
+					<code>
+							list("Minha Lista")
+						</code>
+				</blockquote>
+				<h5 id="insert" class="light">insert</h5>
+				<hr>
+				<span>
+					Adiciona um valor para dentro da lista especificada. A instrução
+					<code>insert(1, 2)</code> tem o seguinte layout:
+					<br> 1- Valor
+					<br> 2- Lista
+				</span>
+				<blockquote>
+					<code>
+							insert(10,"Minha Lista")<br>
+							insert("Hello World !!","Minha Lista")
+						</code>
+				</blockquote>
+				<h5 id="get" class="light">get</h5>
+				<hr>
+				<span>
+					Retorna o valor da posição da lista especificada. A instrução
+					<code>get(1, 2, 3)</code> tem o seguinte layout:
+					<br> 1- Posição
+					<br> 2- Lista
+					<br> 3- Variável
+				</span>
+				<blockquote>
+					<code>
+							get(2,"Minha Lista","x")
+						</code>
+				</blockquote>
+				<h5 id="remove" class="light">remove</h5>
+				<hr>
+				<span>
+					Remove uma posição da lista especificada. A instrução
+					<code>remove(1, 2)</code> tem o seguinte layout:
+					<br> 1- Posição
+					<br> 2- Lista
+				</span>
+				<blockquote>
+					<code>
+							remove(5,"Minha Lista")
+						</code>
+				</blockquote>
+				<h5 id="size" class="light">size</h5>
+				<hr>
+				<span>
+					Retorna o tamanho da lista especificada. A instrução
+					<code>size(1, 2)</code> tem o seguinte layout:
+					<br> 1- Lista
+					<br> 2- Variável
+				</span>
+				<blockquote>
+					<code>
+							size("Minha Lista","x")<br>
+						</code>
+				</blockquote>
+				<h5 id="input" class="light">input</h5>
+				<hr>
+				<span>
+					Exibe uma caixa de diálogo com um campo de entrada ao usuário. A instrução
+					<code>input(1, 2)</code> tem o seguinte layout:
+					<br> 1- Texto a ser exibido
+					<br> 2- Variável
+				</span>
+				<blockquote>
+					<code>
+							input("Insira o valor de x:","x")<br>
+						</code>
+				</blockquote>
+				<h5 id="msg" class="light">msg</h5>
+				<hr>
+				<span>
+					Exibe uma caixa de diálogo com uma mensagem ao usuário. A instrução
+					<code>msg(1)</code> tem o seguinte layout:
+					<br> 1- Texto a ser exibido
+				</span>
+				<blockquote>
+					<code>
+							msg("Hello World !!")<br>
+						</code>
+				</blockquote>
+				<h5 id="clear" class="light">clear</h5>
+				<hr>
+				<span>
+					Limpa o console.
+				</span>
+				<blockquote>
+					<code>
+							clear()<br>
+						</code>
+				</blockquote>
+				<h5 id="delay" class="light">delay</h5>
+				<hr>
+				<span>
+					Espera um determinado tempo para executar a próxima instrução. A instrução
+					<code>delay(1)</code> tem o seguinte layout:
+					<br> 1- Tempo de espera em milisegundos
+				</span>
+				<blockquote>
+					<code>
+							delay(1000)<br>
+						</code>
+				</blockquote>
+				<h5 id="compilerDelay" class="light">compilerDelay</h5>
+				<hr>
+				<span>
+					Altera o tempo de espera de execução de cada função do compilador. A instrução
+					<code>compilerDelay(1)</code> tem o seguinte layout:
+					<br> 1- Tempo de espera em milisegundos
+				</span>
+				<blockquote>
+					<code>
+						    compilerDelay(1000)<br>
+						</code>
+				</blockquote>
+				<h5 id="stop" class="light">stop</h5>
+				<hr>
+				<span>
+					Finaliza a execução do programa.
+				</span>
+				<blockquote>
+					<code>
+						    stop()<br>
+						</code>
+				</blockquote>
+				<h5 id="exit" class="light">exit</h5>
+				<hr>
+				<span>
+					Finaliza a execução do programa e fecha a IDE.
+				</span>
+				<blockquote>
+					<code>
+						    exit()<br>
+						</code>
+				</blockquote>
+				<h5 id="concat" class="light">concat</h5>
+				<hr>
+				<span>
+					Realiza a concatenação de duas variáveis e adiciona o valor concatenado a uma variável especificada. A instrução
+					<code>concat(1, 2, 3)</code> tem o seguinte layout:
+					<br> 1- Valor
+					<br> 2- Valor
+					<br> 3- Variável
+				</span>
+				<blockquote>
+					<code>
+							concat("Hello ","World !!","x")<br>
+							print(x)
+						</code>
+				</blockquote>
+				<h5 id="import" class="light">import</h5>
+				<hr>
+				<span>
+					A instrução import realiza a importação de uma código VRBL de outro arquivo. Esta instrução é executada durante a compilação
+					diferente das outras funções. A instrução
+					<code>import(1)</code> tem o seguinte layout:
+					<br> 1- Diretório do arquivo (Não pode ser uma variável pois as variáveis só serão criadas após a compilação)
+				</span>
+				<blockquote>
+					<code>
+							import("C:/programa.vrbl")
+						</code>
+				</blockquote>
+				<h5 id="length" class="light">length</h5>
+				<hr>
+				<span>
+					Retorna o comprimento de um valor e adiciona este comprimento a variável especificada. A instrução
+					<code>length(1, 2)</code> tem o seguinte layout:
+					<br> 1- Valor
+					<br> 2- Variável
+				</span>
+				<blockquote>
+					<code>
+							length("Hello World","x")
+						</code>
+				</blockquote>
+				<h5 id="charAt" class="light">charAt</h5>
+				<hr>
+				<span>
+					Retorna o caracter da posição de um valor e adiciona este caracter a variável especificada. A instrução
+					<code>charAt(1, 2, 3)</code> tem o seguinte layout:
+					<br> 1- Posição
+					<br> 2- Valor
+					<br> 3- Variável
+				</span>
+				<blockquote>
+					<code>
+							charAt(0,"Hello World","x")
+						</code>
+				</blockquote>
+				<h5 id="showIde" class="light">showIde</h5>
+				<hr>
+				<span>
+					Mostra a interface da IDE.
+				</span>
+				<blockquote>
+					<code>
+							showIde()
+						</code>
+				</blockquote>
+				<h5 id="hideIde" class="light">hideIde</h5>
+				<hr>
+				<span>
+					Oculta a interface da IDE.
+				</span>
+				<blockquote>
+					<code>
+							hideIde()
+						</code>
+				</blockquote>
+				<h5 id="fileRead" class="light">fileRead</h5>
+				<hr>
+				<span>
+					Realiza a leitura do conteúdo de um arquivo. A instrução
+					<code>fileRead(1, 2)</code> tem o seguinte layout:
+					<br> 1- Diretório do arquivo
+					<br> 2- Variável
+				</span>
+				<blockquote>
+					<code>
+							var("file","C:/texto.txt")<br>
+							fileRead(file,"content")<br>
+							print(content)
+						</code>
+				</blockquote>
+				<h5 id="fileWrite" class="light">fileWrite</h5>
+				<hr>
+				<span>
+					Realiza a escrita de um conteúdo em um arquivo. A instrução
+					<code>fileWrite(1, 2)</code> tem o seguinte layout:
+					<br> 1- Conteúdo
+					<br> 2- Diretório do arquivo
+				</span>
+				<blockquote>
+					<code>
+							var("file","C:/texto.txt")<br>
+							fileWrite("Hello World !!", file)<br>
+						</code>
+				</blockquote>
+				<h5 id="asciiEncode" class="light">asciiEncode</h5>
+				<hr>
+				<span>
+					Obtém o código ASCII do primeiro caractér do valor especificado. A instrução
+					<code>asciiEncode(1, 2)</code> tem o seguinte layout:
+					<br> 1- Valor
+					<br> 2- Variável
+				</span>
+				<blockquote>
+					<code>
+							asciiEncode("a","x")<br>
+							print(x)
+						</code>
+				</blockquote>
+				<h5 id="asciiDecode" class="light">asciiDecode</h5>
+				<hr>
+				<span>
+					Obtém o caractér do código ASCII especificado. A instrução
+					<code>asciiDecode(1, 2)</code> tem o seguinte layout:
+					<br> 1- Valor
+					<br> 2- Variável
+				</span>
+				<blockquote>
+					<code>
+							asciiDecode(97,"x")<br>
+							print(x)
+						</code>
+				</blockquote>
+				<h5 id="random" class="light">random</h5>
+				<hr>
+				<span>
+					Retorna um número decimal aleatório a uma variável. A instrução
+					<code>random(1)</code> tem o seguinte layout:
+					<br> 1- Variável
+				</span>
+				<blockquote>
+					<code>
+							random("x")<br>
+							print(x)
+						</code>
+				</blockquote>
+				<h5 id="randomInt" class="light">randomInt</h5>
+				<hr>
+				<span>
+					Retorna um número inteiro aleatório a uma variável. A instrução
+					<code>randomInt(1)</code> tem o seguinte layout:
+					<br> 1- Variável
+				</span>
+				<blockquote>
+					<code>
+							randomInt("x")<br>
+							print(x)
+						</code>
+				</blockquote>
+				<h5 id="randomIntLimit" class="light">randomIntLimit</h5>
+				<hr>
+				<span>
+					Retorna um número inteiro aleatório a uma variável até determinado limite. A instrução
+					<code>randomIntLimit(1, 2)</code> tem o seguinte layout:
+					<br> 1- Limite
+					<br> 1- Variável
+				</span>
+				<blockquote>
+					<code>
+							randomIntLimit(10,"x")<br>
+							print(x)
+						</code>
+				</blockquote>
+				<h5 id="obj" class="light">obj</h5>
+				<hr>
+				<span>
+					Cria um objeto com o nome especificado. A instrução
+					<code>obj(1)</code> tem o seguinte layout:
+					<br> 1- Nome do Objeto
+				</span>
+				<blockquote>
+					<code>
+							obj("myObject")
+						</code>
+				</blockquote>
+				<h5 id="setAttribute" class="light">setAttribute</h5>
+				<hr>
+				<span>
+					Atribui o valor a um atributo do objeto especificado. A instrução
+					<code>setAttribute(1, 2, 3)</code> tem o seguinte layout:
+					<br> 1- Nome do Atributo
+					<br> 2- Valor
+					<br> 3- Nome do Objeto
+				</span>
+				<blockquote>
+					<code>
+							setAttribute("name","Peter","myObject")
+						</code>
+				</blockquote>
+				<h5 id="getAttribute" class="light">getAttribute</h5>
+				<hr>
+				<span>
+					Retorna o valor de um atributo do objeto especificado. A instrução
+					<code>getAttribute(1, 2, 3)</code> tem o seguinte layout:
+					<br> 1- Nome do Atributo
+					<br> 2- Nome do Objeto
+					<br> 3- Variável
+				</span>
+				<blockquote>
+					<code>
+							getAttribute("name","myObject","x")
+						</code>
+				</blockquote>
+				<h5 id="qtdVar" class="light">qtdVar</h5>
+				<hr>
+				<span>
+					Retorna o número de variáveis definidas. A instrução
+					<code>qtdVar(1)</code> tem o seguinte layout:
+					<br> 1- Variável
+				</span>
+				<blockquote>
+					<code>
+							qtdVar("x")
+						</code>
+				</blockquote>
+				<h5 id="qtdList" class="light">qtdList</h5>
+				<hr>
+				<span>
+					Retorna o número de listas definidas. A instrução
+					<code>qtdList(1)</code> tem o seguinte layout:
+					<br> 1- Variável
+				</span>
+				<blockquote>
+					<code>
+							qtdList("x")
+						</code>
+				</blockquote>
+				<h5 id="qtdObj" class="light">qtdObj</h5>
+				<hr>
+				<span>
+					Retorna o número de objetos definidos. A instrução
+					<code>qtdObj(1)</code> tem o seguinte layout:
+					<br> 1- Variável
+				</span>
+				<blockquote>
+					<code>
+							qtdObj("x")
+						</code>
+				</blockquote>
+				<h5 id="getVarName" class="light">getVarName</h5>
+				<hr>
+				<span>
+					Retorna o nome da variável pelo seu índice. A instrução
+					<code>getVarName(1, 2)</code> tem o seguinte layout:
+					<br> 1- Índice
+					<br> 2- Variável
+				</span>
+				<blockquote>
+					<code>
+							getVarName(0,"x")
+						</code>
+				</blockquote>
+				<h5 id="getListName" class="light">getListName</h5>
+				<hr>
+				<span>
+					Retorna o nome da lista pelo seu índice. A instrução
+					<code>getListName(1, 2)</code> tem o seguinte layout:
+					<br> 1- Índice
+					<br> 2- Variável
+				</span>
+				<blockquote>
+					<code>
+							getListName(3,"x")
+						</code>
+				</blockquote>
+				<h5 id="getObjName" class="light">getObjName</h5>
+				<hr>
+				<span>
+					Retorna o nome do objeto pelo seu índice. A instrução
+					<code>getObjName(1, 2)</code> tem o seguinte layout:
+					<br> 1- Índice
+					<br> 2- Variável
+				</span>
+				<blockquote>
+					<code>
+							getObjName(2,"x")
+						</code>
+				</blockquote>
+				<h5 id="break" class="light">break</h5>
+				<hr>
+				<span>
+					Trava o cursor na linha em processamento e aguarda o usuário selecionar a opção continuar. Esta função é mais utilizada para
+					fins de depuração.
+				</span>
+				<blockquote>
+					<code>
+							break()
+						</code>
+				</blockquote>
+				<h5 id="cmd" class="light">cmd</h5>
+				<hr>
+				<span>
+					Executa um comando no Prompt. A instrução
+					<code>cmd(1)</code> tem o seguinte layout:
+					<br> 1- Comando
+				</span>
+				<blockquote>
+					<code>
+							cmd("calc")
+						</code>
+				</blockquote>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<div class="fixed-action-btn">
+			<a href="#home" class="btn-floating btn-large waves-effect waves-light blue darken-2">
+				<i class="material-icons">arrow_upward</i>
+			</a>
+		</div>
+	</footer>
+</body>
+
+</html>

@@ -1,5 +1,0 @@
-var("a","a")
-var("b",10)
-var("c",a)
-var("d",b)
-print("success")

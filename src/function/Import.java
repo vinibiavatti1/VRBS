@@ -23,7 +23,7 @@ public class Import extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		file = new File(parameters[0]);
 		if(!file.exists()) {
 			throw new VRBSException("Arquivo inexistente: " + parameters[0]);

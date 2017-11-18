@@ -20,8 +20,8 @@ public class Input extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
-		parameters[0] = proccessScapeChars(parameters[0]);
+		parameters = validateParameters(parameters);
+		parameters[0] = validadeScapeChar(parameters[0]);
 		String value = JOptionPane.showInputDialog(null, parameters[0]);
 		getCompiler().getVars().put(parameters[1], value);
 	}

@@ -18,7 +18,7 @@ public class AsciiEncode extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		char first = parameters[0].charAt(0);
 		int code = (int)first;
 		getCompiler().getVars().put(parameters[1], code+"");

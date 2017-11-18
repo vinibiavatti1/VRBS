@@ -19,7 +19,7 @@ public class CharAt extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		String value = parameters[1];
 		char c = value.charAt((int)Double.parseDouble(parameters[0]));
 		getCompiler().getVars().put(parameters[2], c+"");

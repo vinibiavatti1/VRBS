@@ -20,7 +20,7 @@ public class Insert extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		getCompiler().getLists().get(parameters[1]).add(parameters[0]);
 	}
 

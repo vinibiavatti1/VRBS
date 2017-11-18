@@ -20,7 +20,7 @@ public class Calc extends VRBSFunction {
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		double v1 = Double.parseDouble(parameters[0]);
 		double v2 = Double.parseDouble(parameters[2]);
 		String op = parameters[1];

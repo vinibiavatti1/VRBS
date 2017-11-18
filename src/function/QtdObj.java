@@ -17,7 +17,7 @@ public class QtdObj extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		double val = getCompiler().getObjects().size();
 		getCompiler().getVars().put(parameters[0], val+"");
 	}

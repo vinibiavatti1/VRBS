@@ -19,7 +19,7 @@ public class List extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		getCompiler().getLists().put(parameters[0], new ArrayList<>());
 	}
 

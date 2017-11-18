@@ -18,7 +18,7 @@ public class Var extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		this.compiler.getVars().put(parameters[0], parameters[1]);
 	}
 

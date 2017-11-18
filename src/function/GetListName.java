@@ -20,7 +20,7 @@ public class GetListName extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		int index = (int)Double.parseDouble(parameters[0]);
 		int count = 0;
 		String varName = "";

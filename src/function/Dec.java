@@ -19,7 +19,7 @@ public class Dec extends VRBSFunction {
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		double value = Double.parseDouble(parameters[0]);
 		value--;
 		getCompiler().getVars().put(parameters[1], value + "");

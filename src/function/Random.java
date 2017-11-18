@@ -18,7 +18,7 @@ public class Random extends VRBSFunction {
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		double value = Math.random();
 		getCompiler().getVars().put(parameters[0], value + "");
 

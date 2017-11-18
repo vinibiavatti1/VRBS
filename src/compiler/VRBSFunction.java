@@ -1,10 +1,5 @@
 package compiler;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * Template de Função
  * 
@@ -16,6 +11,8 @@ public abstract class VRBSFunction {
 	protected VRBSCompiler compiler;
 	private String name;
 	private VRBSDataType[] parametersTypes;
+	private VRBSParameterValidator parameterValidator;
+	private VRBSScapeCharValidator scapeCharValidator;
 
 	/**
 	 * Criar função
@@ -26,6 +23,22 @@ public abstract class VRBSFunction {
 		this.compiler = compiler;
 		this.name = name;
 		this.parametersTypes = parametersTypes;
+		this.parameterValidator = new DefaultParameterValidator();
+		this.scapeCharValidator = new DefaultScapeCharValidator();
+	}
+
+	/**
+	 * Criar função com validadores de parâmetros e caracteres de scape customizados
+	 * 
+	 * @param compiler
+	 */
+	public VRBSFunction(VRBSCompiler compiler, String name, VRBSDataType[] parametersTypes,
+			VRBSParameterValidator parameterValidator, VRBSScapeCharValidator scapeCharValidator) {
+		this.compiler = compiler;
+		this.name = name;
+		this.parametersTypes = parametersTypes;
+		this.parameterValidator = parameterValidator;
+		this.scapeCharValidator = scapeCharValidator;
 	}
 
 	/**
@@ -36,6 +49,27 @@ public abstract class VRBSFunction {
 	public abstract void execute(String[] parameters) throws VRBSException;
 
 	/**
+	 * Validar parâmetros utilizando validador de parâmetros da função
+	 * @param parameters
+	 * @return
+	 * @throws VRBSException
+	 * @see {@link VRBSParameterValidator}
+	 */
+	public String[] validateParameters(String[] parameters) throws VRBSException {
+		return this.parameterValidator.validateParameters(compiler, name, parameters, parametersTypes);
+	}
+	
+	/**
+	 * Validar caracteres de scape utilizando validador de caracteres de scape da função
+	 * @param text
+	 * @return
+	 * @see VRBSScapeCharValidator
+	 */
+	public String validadeScapeChar(String text) {
+		return this.scapeCharValidator.validateParameters(compiler, text);
+	}
+	
+	/**
 	 * @return the parametersTypes
 	 */
 	public VRBSDataType[] getParametersTypes() {
@@ -43,7 +77,8 @@ public abstract class VRBSFunction {
 	}
 
 	/**
-	 * @param parametersTypes the parametersTypes to set
+	 * @param parametersTypes
+	 *            the parametersTypes to set
 	 */
 	public void setParametersTypes(VRBSDataType[] parametersTypes) {
 		this.parametersTypes = parametersTypes;
@@ -80,167 +115,31 @@ public abstract class VRBSFunction {
 	}
 
 	/**
-	 * Validar e Processar todos os parâmetros enviados na chamada da função.<br><br>
-	 * <b>Validação:</b>
-	 * <br>
-	 * 1- Validação da quantidade de parâmetros estabelecidos<br>
-	 * 2- Validação do tipo de dado informado conforme template de parâmetros<br>
-	 * <br>
-	 * <b>Processamento:</b>
-	 * <br>
-	 * 1- Dados informados como variáveis serão convertidos com o valor da variável estabelecida<br>
-	 * 
-	 * @param parameters
-	 * @throws VRBSException Caso houver inconsistencias nos parâmetros enviados.
+	 * @return the parameterValidator
 	 */
-	public String[] validate(String[] parameters) throws VRBSException {
-		
-		// Validar quantidade de parâmetros
-		if (parametersTypes.length != parameters.length) {
-			throw new VRBSException(String.format(VRBSMessages.INCORRECT_PARAMETERS_NUMBER, getName(), parametersTypes.length,
-					this.compiler.getCurrentLine()));
-		}
-
-		for (int i = 0; i < parameters.length; i++) {
-
-			// Processar parâmetro
-			if(isText(parameters[i])) {
-				parameters[i] = parameters[i].replaceAll("\"", "");
-			} else if(isVar(parameters[i])) {
-				parameters[i] = getCompiler().getVars().get(parameters[i]);
-			} else if(isNumber(parameters[i])) {
-			} else if(isArithmeticOperator(parameters[i])) {
-			} else if(isLogicOperator(parameters[i])) {
-			} else {
-				throw new VRBSException(String.format(VRBSMessages.UNDEFINED_VAR, parameters[i], getCompiler().getCurrentLine()));
-			}
-
-			// Validar parâmetro
-			switch (parametersTypes[i]) {
-			case Number:
-				try {
-					Double.parseDouble(parameters[i]);
-				} catch (Exception e) {
-					throw new VRBSException(String.format(VRBSMessages.INCORRECT_PARAMETERS, getName(), compiler.getCurrentLine()));
-				}
-				break;
-			case Text:
-				// Nothing
-				break;
-			case Aritmethic_Operator:
-				if (!isArithmeticOperator(parameters[i])) {
-					throw new VRBSException(String.format(VRBSMessages.INCORRECT_OPERATOR, getName(), compiler.getCurrentLine()));
-				}
-				break;
-			case Logic_Operator:
-				if (!isLogicOperator(parameters[i])) {
-					throw new VRBSException(String.format(VRBSMessages.INCORRECT_OPERATOR, getName(), compiler.getCurrentLine()));
-				}
-				break;
-			case Var:
-				if (!getCompiler().getVars().containsKey(parameters[i])) {
-					getCompiler().getVars().put(parameters[i], "");
-				}
-				break;
-			case List:
-				if (!getCompiler().getLists().containsKey(parameters[i])) {
-					getCompiler().getLists().put(parameters[i], new ArrayList<>());
-				}
-				break;
-			case Object:
-				if (!getCompiler().getObjects().containsKey(parameters[i])) {
-					getCompiler().getObjects().put(parameters[i], new HashMap<>());
-				}
-				break;
-			default:
-				throw new VRBSException(String.format(VRBSMessages.INCORRECT_PATTERN, getName(), compiler.getCurrentLine()));
-			}
-		}
-		return parameters;
-	}
-	
-	/**
-	 * Checar se o parâmetro é um operador lógico
-	 * @param par
-	 * @return
-	 */
-	public boolean isLogicOperator(String par) {
-		return VRBSCompiler.LOGIC_OPERATORS.contains(par);
-	}
-	
-	/**
-	 * Checar se o parâmetro é um operador aritmético
-	 * @param par
-	 * @return
-	 */
-	public boolean isArithmeticOperator(String par) {
-		return VRBSCompiler.ARITHMETIC_OPERATORS.contains(par);
-	}
-	
-	/**
-	 * Checar se o parâmetro contém aspas
-	 * @param par
-	 * @return
-	 */
-	public boolean isText(String par) {
-		return par.startsWith("\"") && par.endsWith("\"");
-	}
-	
-	/**
-	 * Checar se o parâmetro é um número
-	 * @param par
-	 * @return
-	 */
-	public boolean isNumber(String par) {
-		try {
-			Double.parseDouble(par);
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
-	}
-	
-	/**
-	 * Retorna true caso o parâmetro for uma variável
-	 * @param par
-	 * @return
-	 */
-	public boolean isVar(String par) {
-		return getCompiler().getVars().containsKey(par);
+	public VRBSParameterValidator getParameterValidator() {
+		return parameterValidator;
 	}
 
 	/**
-	 * Retornar nome da função
-	 * 
-	 * @param functionStr
-	 * @return
+	 * @param parameterValidator
+	 *            the parameterValidator to set
 	 */
-	public static String extractFunctionName(String functionStr) {
-		return functionStr.split("\\(")[0].trim();
+	public void setParameterValidator(VRBSParameterValidator parameterValidator) {
+		this.parameterValidator = parameterValidator;
 	}
 
 	/**
-	 * Retornar parâmetros da função
-	 * 
-	 * @param functionStr
-	 * @return
+	 * @return the scapeCharValidator
 	 */
-	public static String[] extractFunctionParameters(String functionStr) {
-		String[] parameters = functionStr.split("\\(")[1].replaceAll("\\)", "").split(",");
-		for (int i = 0; i < parameters.length; i++) {
-			parameters[i] = parameters[i].trim();
-		}
-		return parameters;
+	public VRBSScapeCharValidator getScapeCharValidator() {
+		return scapeCharValidator;
 	}
 
 	/**
-	 * Processar caracteres de scape
-	 * 
-	 * @param s
-	 * @return
+	 * @param scapeCharValidator the scapeCharValidator to set
 	 */
-	public String proccessScapeChars(String s) {
-		s = s.replaceAll("%n", "\n");
-		return s;
+	public void setScapeCharValidator(VRBSScapeCharValidator scapeCharValidator) {
+		this.scapeCharValidator = scapeCharValidator;
 	}
 }

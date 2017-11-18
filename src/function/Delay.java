@@ -17,7 +17,7 @@ public class Delay extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		try {
 			Thread.sleep(Long.parseLong(parameters[0]));
 		} catch (NumberFormatException | InterruptedException e) {

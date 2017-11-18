@@ -20,7 +20,7 @@ public class Size extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		int size = getCompiler().getLists().get(parameters[0]).size();
 		getCompiler().getVars().put(parameters[1],size+"");
 	}

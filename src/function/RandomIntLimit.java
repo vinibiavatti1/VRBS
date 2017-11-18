@@ -21,7 +21,7 @@ public class RandomIntLimit extends VRBSFunction {
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		double value = new Random().nextInt((int)Double.parseDouble(parameters[0]));
 		getCompiler().getVars().put(parameters[1], value + "");
 

@@ -20,7 +20,7 @@ public class RandomInt extends VRBSFunction {
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		double value = new Random().nextInt();
 		getCompiler().getVars().put(parameters[0], value + "");
 

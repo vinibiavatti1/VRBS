@@ -22,7 +22,7 @@ public class Get extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		int idx = (int)Double.parseDouble(parameters[0]);
 		if(idx > getCompiler().getLists().get(parameters[1]).size()-1) {
 			throw new VRBSException(String.format(VRBSMessages.LIST_OUT_OF_BOUNDS, idx, parameters[1], getCompiler().getCurrentLine()));

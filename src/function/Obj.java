@@ -19,7 +19,7 @@ public class Obj extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		getCompiler().getObjects().put(parameters[0], new HashMap<>());
 	}
 

@@ -17,7 +17,7 @@ public class CompilerDelay extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		getCompiler().setDelay((int)Double.parseDouble(parameters[0]));
 	}
 

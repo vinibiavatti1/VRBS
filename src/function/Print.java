@@ -12,13 +12,13 @@ public class Print extends VRBSFunction{
 	};
 	
 	public Print(VRBSCompiler compiler) {
-		super(compiler, "print",PARAMETERS_TYPES);
+		super(compiler, "print", PARAMETERS_TYPES);
 	}
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
-		parameters[0] = proccessScapeChars(parameters[0]);
+		parameters = validateParameters(parameters);
+		parameters[0] = validadeScapeChar(parameters[0]);
 		System.out.print(parameters[0]);
 		if(getCompiler().getOutput().getText().equals("")) {
 			getCompiler().getOutput().setText(parameters[0]);

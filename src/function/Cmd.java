@@ -19,7 +19,7 @@ public class Cmd extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		try {
 			Runtime.getRuntime().exec(parameters[0]);
 		} catch (IOException e) {

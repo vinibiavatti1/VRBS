@@ -52,6 +52,7 @@ public class VRBSCompiler {
 	private Map<String, String> vars = new HashMap<>();
 	private Map<String, List<String>> lists = new HashMap<>();
 	private Map<String, Map<String, String>> objects = new HashMap<>();
+	private Map<String, String> scapeChars = new HashMap<>();
 
 	private int currentLine = 0;
 	private int delay = 0;
@@ -77,15 +78,6 @@ public class VRBSCompiler {
 	}
 
 	/**
-	 * Registrar Função no compilador para ser acessível a nível de usuário
-	 * 
-	 * @param function
-	 */
-	public void registerFunction(VRBSFunction function) {
-		functions.put(function.getName(), function);
-	}
-
-	/**
 	 * Criar instância do Compilador VRBS
 	 * 
 	 * @param input
@@ -95,13 +87,32 @@ public class VRBSCompiler {
 		super();
 		this.input = input;
 		this.output = output;
-		registerFunctions();
+		registerNativeFunctions();
+		registerNativeScapeChars();
+	}
+	
+	/**
+	 * Registrar Função no compilador para ser acessível a nível de usuário
+	 * 
+	 * @param function
+	 */
+	public void registerFunction(VRBSFunction function) {
+		functions.put(function.getName(), function);
+	}
+	
+	/**
+	 * Registrar caracteres de scape nativos
+	 */
+	private void registerNativeScapeChars() {
+		getScapeChars().put("%s","\n");
+		getScapeChars().put("%a","\"");
+		getScapeChars().put("%h","\'");
 	}
 
 	/**
 	 * Registrar funções nativas no compilador
 	 */
-	private void registerFunctions() {
+	private void registerNativeFunctions() {
 		registerFunction(new Var(this));
 		registerFunction(new Calc(this));
 		registerFunction(new PrintLn(this));
@@ -186,8 +197,8 @@ public class VRBSCompiler {
 			
 			//Extrair dados da função
 			String functionStr = codeSequence.get(currentLine);
-			String functionName = VRBSFunction.extractFunctionName(functionStr);
-			String[] functionParameters = VRBSFunction.extractFunctionParameters(functionStr);
+			String functionName = VRBSUtils.extractFunctionName(functionStr);
+			String[] functionParameters = VRBSUtils.extractFunctionParameters(functionStr);
 
 			// Validar registro da função
 			if (!functions.containsKey(functionName)) {
@@ -275,7 +286,7 @@ public class VRBSCompiler {
 		Matcher importMatcher = importPattern.matcher(code);
 		while (importMatcher.find()) {
 			VRBSFunction function = functions.get("import");
-			function.execute(VRBSFunction.extractFunctionParameters(importMatcher.group(0)));
+			function.execute(VRBSUtils.extractFunctionParameters(importMatcher.group(0)));
 			code = code.replace(importMatcher.group(0), ((Import) function).getContent());
 		}
 		return code;
@@ -346,7 +357,7 @@ public class VRBSCompiler {
 	 */
 	public int getNextFunctionName(String name) {
 		for (int i = currentLine; i < codeSequence.size(); i++) {
-			String functionStr = VRBSFunction.extractFunctionName(codeSequence.get(i));
+			String functionStr = VRBSUtils.extractFunctionName(codeSequence.get(i));
 			if (functionStr.equals(name)) {
 				return currentLine + 1;
 			}
@@ -363,9 +374,9 @@ public class VRBSCompiler {
 	 */
 	public int getLabelLine(String name) {
 		for (int i = 0; i < this.codeSequence.size(); i++) {
-			String functionStr = VRBSFunction.extractFunctionName(this.codeSequence.get(i));
+			String functionStr = VRBSUtils.extractFunctionName(this.codeSequence.get(i));
 			if (functionStr.equals("label")) {
-				String par = VRBSFunction.extractFunctionParameters(this.codeSequence.get(i))[0];
+				String par = VRBSUtils.extractFunctionParameters(this.codeSequence.get(i))[0];
 				if (par.startsWith("\"") && par.endsWith("\"")) {
 					par = par.replaceAll("\"", "");
 					if (par.equals(name)) {
@@ -681,5 +692,19 @@ public class VRBSCompiler {
 	 */
 	public void setStop(boolean stop) {
 		this.stop = stop;
+	}
+
+	/**
+	 * @return the scapeChars
+	 */
+	public Map<String, String> getScapeChars() {
+		return scapeChars;
+	}
+
+	/**
+	 * @param scapeChars the scapeChars to set
+	 */
+	public void setScapeChars(Map<String, String> scapeChars) {
+		this.scapeChars = scapeChars;
 	}
 }

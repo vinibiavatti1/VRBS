@@ -19,7 +19,7 @@ public class Pow extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		double val = Math.pow(Double.parseDouble(parameters[0]), Double.parseDouble(parameters[1]));
 		getCompiler().getVars().put(parameters[2], val+"");
 	}

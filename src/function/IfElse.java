@@ -22,7 +22,7 @@ public class IfElse extends VRBSFunction {
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		String op = parameters[1];
 		String v1 = parameters[0];
 		String v2 = parameters[2];

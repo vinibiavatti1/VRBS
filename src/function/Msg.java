@@ -19,8 +19,8 @@ public class Msg extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
-		parameters[0] = proccessScapeChars(parameters[0]);
+		parameters = validateParameters(parameters);
+		parameters[0] = validadeScapeChar(parameters[0]);
 		JOptionPane.showMessageDialog(null, parameters[0]);
 	}
 

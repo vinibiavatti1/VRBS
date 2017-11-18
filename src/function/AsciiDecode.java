@@ -18,7 +18,7 @@ public class AsciiDecode extends VRBSFunction {
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		int value = (int) Double.parseDouble(parameters[0]);
 		char ch = (char) value;
 		getCompiler().getVars().put(parameters[1], ch + "");

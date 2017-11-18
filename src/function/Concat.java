@@ -19,7 +19,7 @@ public class Concat extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		getCompiler().getVars().put(parameters[2], parameters[0] + "" + parameters[1]);
 	}
 

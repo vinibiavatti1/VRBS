@@ -23,7 +23,7 @@ public class FileRead extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		File f = new File(parameters[0]);
 		if(!f.exists()) {
 			throw new VRBSException("O arquivo especificado não existe!\n" + parameters[0] + " Linha: " + getCompiler().getCurrentLine());

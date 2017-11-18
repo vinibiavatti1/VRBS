@@ -11,33 +11,22 @@ import compiler.VRBSCompiler;
  * @author VINICIUS
  *
  */
-public class ExecutionTest {
+public class FunctionTest {
 
 	VRBSCompiler compiler;
 	JTextComponent input;
 	JTextComponent output;
 	
-	public ExecutionTest() {
+	public FunctionTest() {
 		input = new JTextArea();
 		output = new JTextArea();
 		compiler = new VRBSCompiler(input, output);
 	}
 	
 	@Test
-	public void varTest1() {
+	public void varTest() {
 		try {
-			input.setText(TestUtils.readTestCode("test1"));
-			compiler.execute();
-		} catch (Exception e) {
-			output.setText(e.getMessage());
-		}
-		assertEquals("success", output.getText());
-	}
-	
-	@Test
-	public void varTest2() {
-		try {
-			input.setText(TestUtils.readTestCode("test2"));
+			input.setText(TestUtils.readTestCode("varTest"));
 			compiler.execute();
 		} catch (Exception e) {
 			output.setText(e.getMessage());
@@ -48,7 +37,7 @@ public class ExecutionTest {
 	@Test
 	public void calcTest() {
 		try {
-			input.setText(TestUtils.readTestCode("test3"));
+			input.setText(TestUtils.readTestCode("calcTest"));
 			compiler.execute();
 		} catch (Exception e) {
 			output.setText(e.getMessage());
@@ -57,8 +46,25 @@ public class ExecutionTest {
 	}
 	
 	@Test
-	public void parseTest() {
-		//TODO
+	public void toIntTest() {
+		try {
+			input.setText(TestUtils.readTestCode("toIntTest"));
+			compiler.execute();
+		} catch (Exception e) {
+			output.setText(e.getMessage());
+		}
+		assertEquals("1.01", output.getText());
+	}
+	
+	@Test
+	public void toFloatTest() {
+		try {
+			input.setText(TestUtils.readTestCode("toFloatTest"));
+			compiler.execute();
+		} catch (Exception e) {
+			output.setText(e.getMessage());
+		}
+		assertEquals("11.0", output.getText());
 	}
 
 }

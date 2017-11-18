@@ -18,7 +18,7 @@ public class Cos extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		String valueStr = parameters[0];
 		double value = Double.parseDouble(valueStr);
 		double cos = Math.cos(value);

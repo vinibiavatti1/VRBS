@@ -18,7 +18,7 @@ public class Length extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		String value = parameters[0];
 		System.out.println(value);
 		int length = value.length();

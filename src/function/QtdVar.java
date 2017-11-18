@@ -17,7 +17,7 @@ public class QtdVar extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		double val = getCompiler().getVars().size();
 		getCompiler().getVars().put(parameters[0], val+"");
 	}

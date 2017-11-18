@@ -22,7 +22,7 @@ public class GetAttribute extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		Map<String, String> obj = getCompiler().getObjects().get(parameters[1]);
 		String value = "";
 		if(obj.containsKey(parameters[0])) {

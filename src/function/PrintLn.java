@@ -17,8 +17,8 @@ public class PrintLn extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
-		parameters[0] = proccessScapeChars(parameters[0]);
+		parameters = validateParameters(parameters);
+		parameters[0] = validadeScapeChar(parameters[0]);
 		System.out.println(parameters[0]);
 		if(getCompiler().getOutput().getText().equals("")) {
 			getCompiler().getOutput().setText(parameters[0] + "\n");

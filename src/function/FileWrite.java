@@ -25,7 +25,7 @@ public class FileWrite extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		File f = new File(parameters[1]);
 		if(!f.exists()) {
 			throw new VRBSException("O arquivo especificado não existe!\n" + parameters[1] + " Linha: " + getCompiler().getCurrentLine());

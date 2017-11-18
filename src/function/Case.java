@@ -20,7 +20,7 @@ public class Case extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		String value = parameters[0];
 		int labelLine = getCompiler().getLabelLine(parameters[2]);
 		if(labelLine == -1) {

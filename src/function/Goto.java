@@ -18,7 +18,7 @@ public class Goto extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		int labelLine = getCompiler().getLabelLine(parameters[0]);
 		if(labelLine == -1) {
 			throw new VRBSException(

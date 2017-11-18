@@ -22,7 +22,7 @@ public class SetAttribute extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		Map<String, String> obj = getCompiler().getObjects().get(parameters[2]);
 		obj.put(parameters[0], parameters[1]);
 	}

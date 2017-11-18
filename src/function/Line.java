@@ -17,7 +17,7 @@ public class Line extends VRBSFunction{
 
 	@Override
 	public void execute(String[] parameters) throws VRBSException {
-		parameters = validate(parameters);
+		parameters = validateParameters(parameters);
 		getCompiler().setCurrentLine(((int)(Double.parseDouble(parameters[0])))-1);
 	}
 

@@ -7,5 +7,5 @@ Acesse a documentação nas pastas javadoc e doc.
 
 Colabore!
 
-Veja também a VRBSIDE, uma ide para programação da linguágem VRBS!
+Veja também a VRBSIDE, uma ide para programação da linguagem VRBS!
 https://github.com/vinibiavatti1/VRBSIDE

@@ -44,14 +44,14 @@ public class IfElse extends VRBSFunction {
 			} else {
 				getCompiler().setCurrentLine(labelLineNo);
 			}
-			break;
+			return;
 		case "!=":
 			if (!v1.equals(v2)) {
 				getCompiler().setCurrentLine(labelLineYes);
 			} else {
 				getCompiler().setCurrentLine(labelLineNo);
 			}
-			break;
+			return;
 		default:
 			break;
 		}

@@ -36,12 +36,12 @@ public class If extends VRBSFunction {
 			if (v1.equals(v2)) {
 				getCompiler().setCurrentLine(labelLine);
 			} 
-			break;
+			return;
 		case "!=":
 			if (!v1.equals(v2)) {
 				getCompiler().setCurrentLine(labelLine);
 			}
-			break;
+			return;
 		default:
 			break;
 		}

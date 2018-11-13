@@ -32,14 +32,14 @@ public class Check extends VRBSFunction {
 			} else {
 				getCompiler().setCurrentLine(getCompiler().getCurrentLine()+1);
 			}
-			break;
+			return;
 		case "!=":
 			if (!v1.equals(v2)) {
 
 			} else {
 				getCompiler().setCurrentLine(getCompiler().getCurrentLine()+1);
 			}
-			break;
+			return;
 		default:
 			break;
 		}
